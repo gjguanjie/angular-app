@@ -1,0 +1,30 @@
+<div class="login-container">
+  <div class="login-form">
+    <el-form [formGroup]="validateForm" [show-icon]="true" [show-message]="true">
+      <div el-row>
+        <div el-col span="24">
+          <div class="title"> 用户登陆</div>
+        </div>
+      </div>
+      <el-form-item [required]="true" [status]="statusCtrl('mail')" [error]="messageCtrl('mail')">
+        <el-input formControlName="mail" placeholder="请输入账号" prefix-icon="el-icon-user">
+          <ng-template #prepend>
+            <span>用户名:</span>
+          </ng-template>
+        </el-input>
+      </el-form-item>
+
+      <el-form-item [required]="true" [status]="statusCtrl('password')" [error]="messageCtrl('password')">
+        <el-input formControlName="password" native-type="password" placeholder="请输入密码">
+          <ng-template #prepend>
+            <span>密&nbsp;&nbsp;&nbsp;&nbsp;码:</span>
+          </ng-template>
+        </el-input>
+      </el-form-item>
+      <el-form-item style="text-align: center;">
+        <el-button style="width:48%;" (click)="goToLogin()">提交</el-button>
+        <el-button style="width:48%;" (click)="reset()">重置</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
+</div>
